@@ -1,0 +1,1291 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AZNEWTEC | Elite شهودية Guidance</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Inter:wght@300;400;500;600;700&family=Noto+Naskh+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --gold: #D4AF37;
+            --gold-light: #F4E4A6;
+            --gold-dark: #B8860B;
+            --charcoal: #1a1a1a;
+            --charcoal-light: #2d2d2d;
+            --ivory: #F8F5F0;
+            --ivory-dark: #E8E5E0;
+            --accent: #0A9396;
+            --accent-light: #2EC4B6;
+            --euro-blue: #0055A4;
+            --euro-gold: #FFD700;
+            --shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+            --radius: 16px;
+            --transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.1);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+            color: var(--ivory);
+            line-height: 1.7;
+            min-height: 100vh;
+            font-family: 'Inter', 'Noto Naskh Arabic', sans-serif;
+            padding-bottom: 3rem;
+            overflow-x: hidden;
+        }
+        
+        .arabic {
+            font-family: 'Noto Naskh Arabic', sans-serif;
+            direction: rtl;
+        }
+        
+        .english {
+            font-family: 'Inter', sans-serif;
+            direction: ltr;
+        }
+        
+        .luxury-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 20% 30%, rgba(212, 175, 55, 0.05) 0%, transparent 50%),
+                radial-gradient(circle at 80% 70%, rgba(10, 147, 150, 0.05) 0%, transparent 50%);
+            z-index: -1;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            position: relative;
+            z-index: 1;
+        }
+        
+        /* Language Switcher */
+        .language-switcher {
+            position: fixed;
+            top: 1.5rem;
+            right: 1.5rem;
+            z-index: 1000;
+            display: flex;
+            gap: 0.5rem;
+            background: rgba(26, 26, 26, 0.9);
+            backdrop-filter: blur(10px);
+            border-radius: 50px;
+            padding: 0.5rem;
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            box-shadow: var(--shadow);
+        }
+        
+        .lang-btn {
+            background: transparent;
+            color: var(--gold-light);
+            border: none;
+            padding: 0.5rem 1.2rem;
+            border-radius: 50px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            font-family: 'Inter', sans-serif;
+        }
+        
+        .lang-btn.active {
+            background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+            color: var(--charcoal);
+        }
+        
+        .lang-btn:hover:not(.active) {
+            background: rgba(212, 175, 55, 0.1);
+        }
+        
+        /* Header & Profile */
+        .header {
+            text-align: center;
+            padding: 4rem 0 2rem;
+            position: relative;
+        }
+        
+        .header:after {
+            content: '';
+            position: absolute;
+            width: 150px;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--gold), transparent);
+            bottom: 1.5rem;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .logo {
+            font-family: 'Cinzel', serif;
+            font-size: 3.5rem;
+            font-weight: 700;
+            background: linear-gradient(to right, var(--gold), var(--gold-light));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            margin-bottom: 0.8rem;
+            letter-spacing: 3px;
+            text-shadow: 0 5px 15px rgba(212, 175, 55, 0.2);
+        }
+        
+        .tagline {
+            color: var(--gold-light);
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 2rem;
+            font-weight: 300;
+            letter-spacing: 1px;
+            opacity: 0.9;
+        }
+        
+        .tagline.ar {
+            font-family: 'Noto Naskh Arabic', serif;
+            letter-spacing: 0;
+            line-height: 1.8;
+        }
+        
+        .profile-container {
+            margin: 2.5rem auto;
+            max-width: 550px;
+            position: relative;
+        }
+        
+        .profile-frame {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            margin: 0 auto 1.5rem;
+            padding: 8px;
+            background: linear-gradient(135deg, var(--gold), var(--gold-dark), var(--accent));
+            position: relative;
+            box-shadow: var(--shadow);
+            animation: rotateGradient 20s linear infinite;
+        }
+        
+        @keyframes rotateGradient {
+            0% { background: linear-gradient(135deg, var(--gold), var(--gold-dark), var(--accent)); }
+            25% { background: linear-gradient(225deg, var(--gold), var(--gold-dark), var(--accent)); }
+            50% { background: linear-gradient(315deg, var(--gold), var(--gold-dark), var(--accent)); }
+            75% { background: linear-gradient(45deg, var(--gold), var(--gold-dark), var(--accent)); }
+            100% { background: linear-gradient(135deg, var(--gold), var(--gold-dark), var(--accent)); }
+        }
+        
+        .profile-img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--charcoal), var(--charcoal-light));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4.5rem;
+            color: var(--gold);
+        }
+        
+        .profile-name {
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: var(--ivory);
+            margin-bottom: 0.5rem;
+        }
+        
+        .profile-title {
+            color: var(--gold);
+            font-weight: 500;
+            margin-bottom: 0.8rem;
+            font-size: 1.1rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+        
+        .profile-title.ar {
+            letter-spacing: 0;
+            font-family: 'Noto Naskh Arabic', serif;
+        }
+        
+        .profile-desc {
+            color: var(--ivory-dark);
+            font-size: 0.95rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+            opacity: 0.8;
+        }
+        
+        .profile-desc.ar {
+            font-family: 'Noto Naskh Arabic', serif;
+            line-height: 1.9;
+        }
+        
+        .credentials {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+        
+        .cred-badge {
+            background: rgba(212, 175, 55, 0.1);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            border-radius: 50px;
+            padding: 0.6rem 1.2rem;
+            font-size: 0.85rem;
+            color: var(--gold-light);
+            backdrop-filter: blur(10px);
+        }
+        
+        .cred-badge.ar {
+            font-family: 'Noto Naskh Arabic', serif;
+        }
+        
+        /* Main Call to Action */
+        .main-cta {
+            background: linear-gradient(135deg, rgba(26, 26, 26, 0.9), rgba(10, 147, 150, 0.15));
+            border-radius: var(--radius);
+            padding: 2.5rem;
+            text-align: center;
+            margin: 3rem 0;
+            box-shadow: var(--shadow);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            backdrop-filter: blur(10px);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .main-cta:before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: linear-gradient(45deg, var(--gold), var(--accent), var(--gold));
+            z-index: -1;
+            border-radius: calc(var(--radius) + 2px);
+            opacity: 0.5;
+        }
+        
+        .main-cta h2 {
+            font-size: 2.2rem;
+            margin-bottom: 1.2rem;
+            background: linear-gradient(to right, var(--gold), var(--accent-light));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            font-family: 'Cinzel', serif;
+        }
+        
+        .main-cta h2.ar {
+            font-family: 'Noto Naskh Arabic', serif;
+        }
+        
+        .main-cta p {
+            margin-bottom: 2rem;
+            opacity: 0.9;
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .main-cta p.ar {
+            font-family: 'Noto Naskh Arabic', serif;
+            line-height: 1.9;
+        }
+        
+        .whatsapp-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #25D366, #128C7E);
+            color: white;
+            text-decoration: none;
+            padding: 1.2rem 2.5rem;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1.2rem;
+            transition: var(--transition);
+            box-shadow: 0 10px 25px rgba(37, 211, 102, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .whatsapp-btn:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: 0.5s;
+        }
+        
+        .whatsapp-btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(37, 211, 102, 0.5);
+        }
+        
+        .whatsapp-btn:hover:before {
+            left: 100%;
+        }
+        
+        .whatsapp-btn i {
+            margin-right: 12px;
+            font-size: 1.5rem;
+        }
+        
+        .whatsapp-btn.ar i {
+            margin-right: 0;
+            margin-left: 12px;
+        }
+        
+        /* Euro Real Estate Simple Card */
+        .euro-simple-card {
+            background: linear-gradient(135deg, rgba(26, 26, 26, 0.95), rgba(0, 85, 164, 0.15));
+            border-radius: var(--radius);
+            padding: 2rem;
+            margin: 2rem 0;
+            box-shadow: var(--shadow);
+            border: 1px solid rgba(0, 85, 164, 0.3);
+            backdrop-filter: blur(10px);
+            position: relative;
+            overflow: hidden;
+            text-align: center;
+            transition: var(--transition);
+        }
+        
+        .euro-simple-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(255, 215, 0, 0.5);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.35);
+        }
+        
+        .euro-simple-card:before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: linear-gradient(45deg, var(--euro-blue), var(--euro-gold), var(--euro-blue));
+            z-index: -1;
+            border-radius: calc(var(--radius) + 2px);
+            opacity: 0.3;
+        }
+        
+        .euro-simple-icon {
+            font-size: 2.5rem;
+            color: var(--euro-gold);
+            margin-bottom: 1.2rem;
+            display: inline-block;
+            padding: 1rem;
+            background: rgba(0, 85, 164, 0.2);
+            border-radius: 50%;
+        }
+        
+        .euro-simple-title {
+            font-size: 1.8rem;
+            background: linear-gradient(to right, var(--euro-gold), #FFED4E);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            font-family: 'Cinzel', serif;
+            margin-bottom: 1.5rem;
+        }
+        
+        .euro-simple-title.ar {
+            font-family: 'Noto Naskh Arabic', serif;
+        }
+        
+        .euro-simple-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, var(--euro-blue), #1E6DC1);
+            color: white;
+            text-decoration: none;
+            padding: 1rem 2.2rem;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            transition: var(--transition);
+            box-shadow: 0 8px 20px rgba(0, 85, 164, 0.4);
+        }
+        
+        .euro-simple-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 25px rgba(0, 85, 164, 0.6);
+            background: linear-gradient(135deg, #1E6DC1, var(--euro-blue));
+        }
+        
+        .euro-simple-btn i {
+            margin-right: 10px;
+            font-size: 1.3rem;
+        }
+        
+        .euro-simple-btn.ar i {
+            margin-right: 0;
+            margin-left: 10px;
+        }
+        
+        /* Services Grid */
+        .section-title {
+            text-align: center;
+            margin: 4rem 0 2.5rem;
+            font-size: 2rem;
+            color: var(--ivory);
+            position: relative;
+            font-family: 'Cinzel', serif;
+        }
+        
+        .section-title.ar {
+            font-family: 'Noto Naskh Arabic', serif;
+        }
+        
+        .section-title:after {
+            content: '';
+            position: absolute;
+            width: 100px;
+            height: 3px;
+            background: linear-gradient(to right, var(--gold), var(--accent));
+            bottom: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 2px;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+        
+        .service-card {
+            background: linear-gradient(145deg, rgba(40, 40, 40, 0.8), rgba(26, 26, 26, 0.9));
+            border-radius: var(--radius);
+            padding: 2.2rem;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            border: 1px solid rgba(212, 175, 55, 0.1);
+            backdrop-filter: blur(10px);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4);
+            border-color: rgba(212, 175, 55, 0.3);
+        }
+        
+        .service-card:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 5px;
+            height: 100%;
+            background: linear-gradient(to bottom, var(--gold), var(--accent));
+        }
+        
+        .service-card.ar:before {
+            left: auto;
+            right: 0;
+        }
+        
+        .service-icon {
+            font-size: 2.5rem;
+            color: var(--gold);
+            margin-bottom: 1.5rem;
+            display: inline-block;
+            padding: 1rem;
+            background: rgba(212, 175, 55, 0.1);
+            border-radius: 12px;
+        }
+        
+        .service-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--ivory);
+        }
+        
+        .service-title.ar {
+            font-family: 'Noto Naskh Arabic', serif;
+        }
+        
+        .service-desc {
+            color: var(--ivory-dark);
+            margin-bottom: 1.8rem;
+            font-size: 1rem;
+            opacity: 0.9;
+            line-height: 1.8;
+        }
+        
+        .service-desc.ar {
+            font-family: 'Noto Naskh Arabic', serif;
+            line-height: 1.9;
+            text-align: right;
+        }
+        
+        /* Products Section */
+        .products-simple-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3.5rem;
+        }
+        
+        .product-simple-card {
+            background: linear-gradient(145deg, rgba(40, 40, 40, 0.8), rgba(26, 26, 26, 0.9));
+            border-radius: var(--radius);
+            padding: 2rem;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            border: 1px solid rgba(10, 147, 150, 0.1);
+            text-align: center;
+            backdrop-filter: blur(10px);
+        }
+        
+        .product-simple-card:hover {
+            transform: translateY(-8px);
+            border-color: rgba(10, 147, 150, 0.3);
+        }
+        
+        .product-simple-icon {
+            font-size: 2.2rem;
+            color: var(--accent-light);
+            margin-bottom: 1.2rem;
+            display: inline-block;
+            padding: 1rem;
+            background: rgba(10, 147, 150, 0.1);
+            border-radius: 50%;
+        }
+        
+        .product-simple-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--ivory);
+        }
+        
+        .product-simple-title.ar {
+            font-family: 'Noto Naskh Arabic', serif;
+        }
+        
+        .product-simple-card p {
+            color: var(--ivory-dark);
+            margin-bottom: 1.5rem;
+            font-size: 0.95rem;
+            opacity: 0.9;
+        }
+        
+        .product-simple-card p.ar {
+            font-family: 'Noto Naskh Arabic', serif;
+            line-height: 1.9;
+        }
+        
+        .btn {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+            color: var(--charcoal);
+            text-decoration: none;
+            padding: 0.9rem 1.8rem;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 0.95rem;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+        }
+        
+        .btn:hover {
+            background: linear-gradient(135deg, var(--gold-light), var(--gold));
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(212, 175, 55, 0.3);
+        }
+        
+        .btn-small {
+            padding: 0.7rem 1.5rem;
+            font-size: 0.9rem;
+        }
+        
+        .btn-accent {
+            background: linear-gradient(135deg, var(--accent), var(--accent-light));
+            color: white;
+        }
+        
+        .btn-accent:hover {
+            background: linear-gradient(135deg, var(--accent-light), var(--accent));
+            box-shadow: 0 10px 20px rgba(10, 147, 150, 0.3);
+        }
+        
+        /* Footer */
+        .footer {
+            text-align: center;
+            margin-top: 4rem;
+            padding-top: 3rem;
+            border-top: 1px solid rgba(212, 175, 55, 0.2);
+            color: var(--ivory-dark);
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+        
+        .footer.ar {
+            font-family: 'Noto Naskh Arabic', serif;
+        }
+        
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+        }
+        
+        .footer-links a {
+            color: var(--gold-light);
+            text-decoration: none;
+            transition: var(--transition);
+            font-weight: 500;
+        }
+        
+        .footer-links a:hover {
+            color: var(--accent-light);
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .services-grid, .products-simple-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .logo {
+                font-size: 2.5rem;
+            }
+            
+            .main-cta h2 {
+                font-size: 1.8rem;
+            }
+            
+            .euro-simple-title {
+                font-size: 1.5rem;
+            }
+            
+            .header {
+                padding: 3rem 0 1.5rem;
+            }
+            
+            .container {
+                padding: 0 1.5rem;
+            }
+            
+            .profile-frame {
+                width: 150px;
+                height: 150px;
+            }
+            
+            .profile-img {
+                font-size: 3.5rem;
+            }
+            
+            .language-switcher {
+                top: 1rem;
+                right: 1rem;
+            }
+        }
+        
+        /* Animation */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .fade-in {
+            opacity: 0;
+            animation: fadeIn 1s ease forwards;
+        }
+        
+        .delay-1 { animation-delay: 0.1s; }
+        .delay-2 { animation-delay: 0.2s; }
+        .delay-3 { animation-delay: 0.3s; }
+        .delay-4 { animation-delay: 0.4s; }
+        .delay-5 { animation-delay: 0.5s; }
+        
+        /* Badge */
+        .badge {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+            color: var(--charcoal);
+            padding: 0.4rem 1rem;
+            border-radius: 50px;
+            font-size: 0.75rem;
+            font-weight: 800;
+            margin-left: 0.8rem;
+            vertical-align: middle;
+        }
+        
+        .badge.ar {
+            margin-left: 0;
+            margin-right: 0.8rem;
+        }
+        
+        .highlight {
+            color: var(--gold);
+            font-weight: 700;
+        }
+        
+        .world-view-method {
+            display: inline-block;
+            margin-top: 0.5rem;
+            font-style: italic;
+            color: var(--accent-light);
+            font-weight: 500;
+        }
+        
+        .world-view-method.ar {
+            font-family: 'Noto Naskh Arabic', serif;
+        }
+        
+        /* Decorative Elements */
+        .decorative-line {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.5), transparent);
+            margin: 2.5rem 0;
+        }
+        
+        /* Language Content */
+        .lang-content {
+            display: none;
+        }
+        
+        .lang-content.active {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="luxury-bg"></div>
+    
+    <!-- Language Switcher -->
+    <div class="language-switcher">
+        <button class="lang-btn active" data-lang="en">English</button>
+        <button class="lang-btn" data-lang="ar">العربية</button>
+    </div>
+    
+    <div class="container">
+        <!-- English Content -->
+        <div class="lang-content active english" id="en-content">
+            <!-- Header -->
+            <header class="header fade-in">
+                <h1 class="logo">AZNEWTEC</h1>
+                <p class="tagline english">Elite شهودية Guidance for Fast, Clear Decisions in Life & Business</p>
+            </header>
+            
+            <!-- Profile Section -->
+            <section class="profile-container fade-in delay-1">
+                <div class="profile-frame">
+                    <div class="profile-img">
+                        <i class="fas fa-crown"></i>
+                    </div>
+                </div>
+                <h2 class="profile-name">Maryam Dehvari</h2>
+                <div class="world-view-method english">World-View Method</div>
+                <p class="profile-title english">Founder & President of AZNEWTEC</p>
+                <p class="profile-desc english">With over four decades of refined شهودية mastery, twenty years of deep meditative practice, and specialized expertise in animal communication & energy healing, Maryam brings unparalleled precision and transformative results to every consultation.</p>
+                
+                <div class="credentials">
+                    <div class="cred-badge english">40+ Years شهودية Experience</div>
+                    <div class="cred-badge english">20+ Years Meditation Practice</div>
+                    <div class="cred-badge english">Animal Communication Expert</div>
+                </div>
+            </section>
+            
+            <!-- Main CTA -->
+            <section class="main-cta fade-in delay-2">
+                <h2 class="english">When Logic Reaches Its Limit</h2>
+                <p class="english">When your mind is overwhelmed, when decisions become heavy, and when analysis no longer reveals the answer... AZNEWTEC provides the clarity you seek. This is not therapy. This is not coaching. This is شهودية intelligence.</p>
+                <a href="https://wa.me/971509806232" class="whatsapp-btn english" target="_blank">
+                    <i class="fab fa-whatsapp"></i> Secure Your Consultation
+                </a>
+                <p style="margin-top: 1.5rem; font-size: 0.9rem; opacity: 0.8;" class="english">Your definitive answer awaits</p>
+            </section>
+            
+            <!-- Euro Real Estate Simple Card -->
+            <div class="euro-simple-card fade-in delay-3">
+                <div class="euro-simple-icon">
+                    <i class="fas fa-landmark"></i>
+                </div>
+                <h2 class="euro-simple-title english">Euro Real Estate Consultation</h2>
+                <a href="https://wa.me/971509806232?text=I'm interested in Euro Real Estate Consultation" class="euro-simple-btn english" target="_blank">
+                    <i class="fab fa-whatsapp"></i> Consult for Euro Real Estate
+                </a>
+            </div>
+            
+            <div class="decorative-line"></div>
+            
+            <!-- 1-Hour Consultation -->
+            <div class="service-card fade-in delay-1">
+                <div class="service-icon">
+                    <i class="fas fa-gem"></i>
+                </div>
+                <h3 class="service-title english">Exclusive شهودية Consultation <span class="badge english">SIGNATURE SERVICE</span></h3>
+                <p class="service-desc english">A comprehensive session featuring deep شهودية analysis, energetic exploration, and strategic guidance. Includes two days of personalized follow-up support via WhatsApp and a detailed executive report with actionable solutions tailored to your unique situation.</p>
+                <a href="https://wa.me/971509806232?text=I'm interested in the Exclusive شهودية Consultation" class="btn english" target="_blank">
+                    Reserve Your Session
+                </a>
+            </div>
+            
+            <!-- Services Grid -->
+            <h2 class="section-title english fade-in delay-2">Areas of Elite Expertise</h2>
+            
+            <div class="services-grid">
+                <div class="service-card fade-in delay-1">
+                    <div class="service-icon">
+                        <i class="fas fa-chess-king"></i>
+                    </div>
+                    <h3 class="service-title english">Executive Business Intelligence</h3>
+                    <p class="service-desc english">Strategic decision-making, partnership alignment, organizational growth pathways, talent acquisition insight, and predictive شهودية analysis for leaders who must navigate complexity with precision.</p>
+                    <a href="https://wa.me/971509806232?text=I'm interested in Executive Business Intelligence" class="btn btn-small english" target="_blank">
+                        Explore
+                    </a>
+                </div>
+                
+                <div class="service-card fade-in delay-2">
+                    <div class="service-icon">
+                        <i class="fas fa-compass"></i>
+                    </div>
+                    <h3 class="service-title english">Personal Pathfinding</h3>
+                    <p class="service-desc english">Life direction clarity, transition guidance (including relocation), emotional labyrinth navigation, and energetic block resolution. Receive definitive answers—not speculation.</p>
+                    <a href="https://wa.me/971509806232?text=I'm interested in Personal Pathfinding" class="btn btn-small english" target="_blank">
+                        Explore
+                    </a>
+                </div>
+                
+                <div class="service-card fade-in delay-3">
+                    <div class="service-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3 class="service-title english">Bespoke Meditative Systems</h3>
+                    <p class="service-desc english">Tailored energy-based meditation protocols, issue-specific resonance practices, deep-sleep optimization, and decision-enhancement sequences. Each creation is calibrated to your unique energetic signature.</p>
+                    <a href="https://wa.me/971509806232?text=I'm interested in Bespoke Meditative Systems" class="btn btn-small english" target="_blank">
+                        Explore
+                    </a>
+                </div>
+                
+                <div class="service-card fade-in delay-4">
+                    <div class="service-icon">
+                        <i class="fas fa-feather-alt"></i>
+                    </div>
+                    <h3 class="service-title english">Animal Consciousness Communication</h3>
+                    <p class="service-desc english">Decoding unusual behaviors, alleviating anxiety or fear, interpreting unexplained symptoms, and facilitating human-animal energetic alignment. For when conventional approaches fall short.</p>
+                    <a href="https://wa.me/971509806232?text=I'm interested in Animal Consciousness Communication" class="btn btn-small english" target="_blank">
+                        Explore
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Digital Products -->
+            <h2 class="section-title english fade-in delay-3">Digital Resources</h2>
+            
+            <div class="products-simple-grid">
+                <div class="product-simple-card fade-in delay-1">
+                    <div class="product-simple-icon">
+                        <i class="fas fa-scroll"></i>
+                    </div>
+                    <h3 class="product-simple-title english">Animal Energy Healing Mastery</h3>
+                    <p class="english">A comprehensive guide to advanced animal energy healing techniques and consciousness communication.</p>
+                    <a href="https://payhip.com/b/EqO43" class="btn btn-small btn-accent english" target="_blank">Acquire Now</a>
+                </div>
+                
+                <div class="product-simple-card fade-in delay-2">
+                    <div class="product-simple-icon">
+                        <i class="fas fa-book-open"></i>
+                    </div>
+                    <h3 class="product-simple-title english">Animal Energy Primer</h3>
+                    <p class="english">Introductory guide to fundamental animal energy healing principles (complimentary edition).</p>
+                    <a href="https://payhip.com/b/WPNM4" class="btn btn-small btn-accent english" target="_blank">Download Free</a>
+                </div>
+                
+                <div class="product-simple-card fade-in delay-3">
+                    <div class="product-simple-icon">
+                        <i class="fas fa-star-and-crescent"></i>
+                    </div>
+                    <h3 class="product-simple-title english">Embrace Happiness</h3>
+                    <p class="english">Available in both English and Arabic editions. A journey to intentional joy.</p>
+                    <div style="display: flex; gap: 0.7rem; justify-content: center; margin-top: 1.2rem;">
+                        <a href="https://payhip.com/b/DerMj" class="btn btn-small english" target="_blank">Arabic</a>
+                        <a href="https://payhip.com/b/Q5TtD" class="btn btn-small english" target="_blank">English</a>
+                    </div>
+                </div>
+                
+                <div class="product-simple-card fade-in delay-4">
+                    <div class="product-simple-icon">
+                        <i class="fas fa-wind"></i>
+                    </div>
+                    <h3 class="product-simple-title english">Breath Work Planner</h3>
+                    <p class="english">A 7-day structured planner complementing the Embrace Happiness ebook.</p>
+                    <a href="https://payhip.com/b/hy02Z" class="btn btn-small btn-accent english" target="_blank">Download Free</a>
+                </div>
+            </div>
+            
+            <!-- Curated Tools -->
+            <h2 class="section-title english fade-in delay-4">Curated Wellness Technologies</h2>
+            
+            <div class="services-grid">
+                <div class="service-card fade-in delay-1">
+                    <div class="service-icon">
+                        <i class="fas fa-glass-whiskey"></i>
+                    </div>
+                    <h3 class="service-title english">i9 Living Structured Water Vessel</h3>
+                    <p class="service-desc english">Advanced water structuring technology designed to enhance molecular coherence, bioavailability, and vitality.</p>
+                    <a href="https://i9living.eu/?wpam_id=4" class="btn btn-small english" target="_blank">Explore Technology</a>
+                </div>
+                
+                <div class="service-card fade-in delay-2">
+                    <div class="service-icon">
+                        <i class="fas fa-water"></i>
+                    </div>
+                    <h3 class="service-title english">Biodynamizer Water Revitalization System</h3>
+                    <p class="service-desc english">Premium water revitalization technology. Exclusive 5% patronage discount with code <span class="highlight">DEV5</span></p>
+                    <a href="https://biodynamizer.com/en/" class="btn btn-small english" target="_blank">Explore System</a>
+                </div>
+                
+                <div class="service-card fade-in delay-3">
+                    <div class="service-icon">
+                        <i class="fas fa-university"></i>
+                    </div>
+                    <h3 class="service-title english">شهودية Leadership Academy</h3>
+                    <p class="service-desc english">Master the <em>World-View Method</em> of شهودية leadership. Exclusive training for discerning individuals.</p>
+                    <a href="https://wa.me/971509806232?text=I'm interested in the شهودية Leadership Academy" class="btn btn-small english" target="_blank">
+                        Inquire for Enrollment
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Final CTA -->
+            <section class="main-cta fade-in delay-5" style="margin-top: 4rem;">
+                <h2 class="english">The Fastest Path to Clarity is Also the Most Direct</h2>
+                <p class="english">At AZNEWTEC, we specialize in high-precision شهودية solutions that cut through complexity to deliver actionable direction. Your moment of certainty awaits.</p>
+                <a href="https://wa.me/971509806232" class="whatsapp-btn english" target="_blank">
+                    <i class="fab fa-whatsapp"></i> Initiate Consultation
+                </a>
+            </section>
+            
+            <!-- Footer -->
+            <footer class="footer english fade-in">
+                <div class="footer-links">
+                    <a href="https://wa.me/971509806232" target="_blank">Direct Consultation</a>
+                    <a href="https://wa.me/971509806232?text=I'm interested in Euro Real Estate consultation" target="_blank">Euro Real Estate</a>
+                    <a href="https://wa.me/971509806232?text=Information about World-View Method training" target="_blank">Leadership Academy</a>
+                </div>
+                <p>© AZNEWTEC | Elite شهودية Guidance</p>
+                <p style="margin-top: 1rem; font-size: 0.8rem; letter-spacing: 0.5px;">Designed for those who require precision, clarity, and definitive results.</p>
+            </footer>
+        </div>
+        
+        <!-- Arabic Content -->
+        <div class="lang-content arabic" id="ar-content">
+            <!-- Header -->
+            <header class="header fade-in">
+                <h1 class="logo">AZNEWTEC</h1>
+                <p class="tagline ar">إرشاد شهودية نخبوي لاتخاذ قرارات سريعة وواضحة في الحياة والأعمال</p>
+            </header>
+            
+            <!-- Profile Section -->
+            <section class="profile-container fade-in delay-1">
+                <div class="profile-frame">
+                    <div class="profile-img">
+                        <i class="fas fa-crown"></i>
+                    </div>
+                </div>
+                <h2 class="profile-name">مريم دهواري</h2>
+                <div class="world-view-method ar">منهج رؤية العالم</div>
+                <p class="profile-title ar">المؤسسة والرئيسة لـ AZNEWTEC</p>
+                <p class="profile-desc ar">بأكثر من أربعة عقود من الإتقان المكرر للشهودية، وعشرين سنة من الممارسة التأملية العميقة، وتخصص في تواصل الحيوانات وشفاء الطاقة، تقدم مريم دقة لا مثيل لها ونتائج تحويلية في كل استشارة.</p>
+                
+                <div class="credentials">
+                    <div class="cred-badge ar">40+ سنة خبرة شهودية</div>
+                    <div class="cred-badge ar">20+ سنة ممارسة تأملية</div>
+                    <div class="cred-badge ar">خبيرة تواصل حيواني</div>
+                </div>
+            </section>
+            
+            <!-- Main CTA -->
+            <section class="main-cta fade-in delay-2">
+                <h2 class="ar">عندما يصل المنطق إلى حده الأقصى</h2>
+                <p class="ar">عندما يكون عقلك مثقلًا، عندما تصبح القرارات ثقيلة، وعندما لا يكشف التحليل الجواب... تقدم AZNEWTEC الوضوح الذي تبحث عنه. هذا ليس علاجًا. هذا ليس تدريبًا. هذه ذكاء شهودي.</p>
+                <a href="https://wa.me/971509806232" class="whatsapp-btn ar" target="_blank">
+                    <i class="fab fa-whatsapp"></i> احجز استشارتك
+                </a>
+                <p style="margin-top: 1.5rem; font-size: 0.9rem; opacity: 0.8;" class="ar">إجابتك النهائية تنتظرك</p>
+            </section>
+            
+            <!-- Euro Real Estate Simple Card -->
+            <div class="euro-simple-card fade-in delay-3">
+                <div class="euro-simple-icon">
+                    <i class="fas fa-landmark"></i>
+                </div>
+                <h2 class="euro-simple-title ar">استشارات العقارات الأوروبية</h2>
+                <a href="https://wa.me/971509806232?text=أنا مهتم/مهتمة باستشارات العقارات الأوروبية" class="euro-simple-btn ar" target="_blank">
+                    <i class="fab fa-whatsapp"></i> استشارة العقارات الأوروبية
+                </a>
+            </div>
+            
+            <div class="decorative-line"></div>
+            
+            <!-- 1-Hour Consultation -->
+            <div class="service-card fade-in delay-1 ar">
+                <div class="service-icon">
+                    <i class="fas fa-gem"></i>
+                </div>
+                <h3 class="service-title ar">استشارة شهودية حصرية <span class="badge ar">خدمة مميزة</span></h3>
+                <p class="service-desc ar">جلسة شاملة تتضمن تحليل شهودي عميق، واستكشاف طاقي، وإرشاد استراتيجي. تشمل يومين من الدعم المتابع عبر الواتساب وتقريرًا تنفيذيًا مفصلاً مع حلول عملية مصممة خصيصًا لحالتك الفريدة.</p>
+                <a href="https://wa.me/971509806232?text=أنا مهتم/مهتمة بالاستشارة الشهودية الحصرية" class="btn ar" target="_blank">
+                    احجز جلستك
+                </a>
+            </div>
+            
+            <!-- Services Grid -->
+            <h2 class="section-title ar fade-in delay-2">مجالات الخبرة النخبوية</h2>
+            
+            <div class="services-grid">
+                <div class="service-card fade-in delay-1 ar">
+                    <div class="service-icon">
+                        <i class="fas fa-chess-king"></i>
+                    </div>
+                    <h3 class="service-title ar">ذكاء الأعمال التنفيذي</h3>
+                    <p class="service-desc ar">صنع القرار الاستراتيجي، محاذاة الشركاء، مسارات النمو التنظيمي، بصيرة اكتساب المواهب، وتحليل شهودي تنبؤي للقادة الذين يجب أن يتنقلوا في التعقيد بدقة.</p>
+                    <a href="https://wa.me/971509806232?text=أنا مهتم/مهتمة بذكاء الأعمال التنفيذي" class="btn btn-small ar" target="_blank">
+                        استكشف
+                    </a>
+                </div>
+                
+                <div class="service-card fade-in delay-2 ar">
+                    <div class="service-icon">
+                        <i class="fas fa-compass"></i>
+                    </div>
+                    <h3 class="service-title ar">توجيه المسار الشخصي</h3>
+                    <p class="service-desc ar">وضوح اتجاه الحياة، إرشاد التحولات (بما في ذلك الانتقال)، توجيه متاهة المشاعر، وحل العوائق الطاقية. احصل على إجابات نهائية - وليس تخمينًا.</p>
+                    <a href="https://wa.me/971509806232?text=أنا مهتم/مهتمة بتوجيه المسار الشخصي" class="btn btn-small ar" target="_blank">
+                        استكشف
+                    </a>
+                </div>
+                
+                <div class="service-card fade-in delay-3 ar">
+                    <div class="service-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3 class="service-title ar">أنظمة تأملية مخصصة</h3>
+                    <p class="service-desc ar">بروتوكولات تأملية قائمة على الطاقة مصممة خصيصًا، ممارسات رنين مركزة على قضايا محددة، تحسين النوم العميق، وتتابعات تعزيز القرار. كل إبداع معاير لبصمتك الطاقية الفريدة.</p>
+                    <a href="https://wa.me/971509806232?text=أنا مهتم/مهتمة بالأنظمة التأملية المخصصة" class="btn btn-small ar" target="_blank">
+                        استكشف
+                    </a>
+                </div>
+                
+                <div class="service-card fade-in delay-4 ar">
+                    <div class="service-icon">
+                        <i class="fas fa-feather-alt"></i>
+                    </div>
+                    <h3 class="service-title ar">تواصل وعي الحيوانات</h3>
+                    <p class="service-desc ar">فك شيفرة السلوكيات غير المعتادة، تخفيف القلق أو الخوف، تفسير الأعراض غير المبررة، وتسهيل التوافق الطاقي بين الإنسان والحيوان. عندما تكون الأساليب التقليدية غير كافية.</p>
+                    <a href="https://wa.me/971509806232?text=أنا مهتم/مهتمة بتواصل وعي الحيوانات" class="btn btn-small ar" target="_blank">
+                        استكشف
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Digital Products -->
+            <h2 class="section-title ar fade-in delay-3">مصادر رقمية</h2>
+            
+            <div class="products-simple-grid">
+                <div class="product-simple-card fade-in delay-1">
+                    <div class="product-simple-icon">
+                        <i class="fas fa-scroll"></i>
+                    </div>
+                    <h3 class="product-simple-title ar">إتقان شفاء طاقة الحيوانات</h3>
+                    <p class="ar">دليل شامل لتقنيات شفاء طاقة الحيوانات المتقدمة وتواصل الوعي.</p>
+                    <a href="https://payhip.com/b/EqO43" class="btn btn-small btn-accent ar" target="_blank">احصل عليه الآن</a>
+                </div>
+                
+                <div class="product-simple-card fade-in delay-2">
+                    <div class="product-simple-icon">
+                        <i class="fas fa-book-open"></i>
+                    </div>
+                    <h3 class="product-simple-title ar">مقدمة لطاقة الحيوانات</h3>
+                    <p class="ar">دليل تمهيدي لمبادئ شفاء طاقة الحيوانات الأساسية (نسخة مجانية).</p>
+                    <a href="https://payhip.com/b/WPNM4" class="btn btn-small btn-accent ar" target="_blank">حمّل مجانًا</a>
+                </div>
+                
+                <div class="product-simple-card fade-in delay-3">
+                    <div class="product-simple-icon">
+                        <i class="fas fa-star-and-crescent"></i>
+                    </div>
+                    <h3 class="product-simple-title ar">احتضان السعادة</h3>
+                    <p class="ar">متوفر بنسختي الإنجليزية والعربية. رحلة إلى الفرح المقصود.</p>
+                    <div style="display: flex; gap: 0.7rem; justify-content: center; margin-top: 1.2rem;">
+                        <a href="https://payhip.com/b/DerMj" class="btn btn-small ar" target="_blank">العربية</a>
+                        <a href="https://payhip.com/b/Q5TtD" class="btn btn-small ar" target="_blank">الإنجليزية</a>
+                    </div>
+                </div>
+                
+                <div class="product-simple-card fade-in delay-4">
+                    <div class="product-simple-icon">
+                        <i class="fas fa-wind"></i>
+                    </div>
+                    <h3 class="product-simple-title ar">مخطط تمارين التنفس</h3>
+                    <p class="ar">مخطط منظم لمدة 7 أيام مكمل لكتاب احتضان السعادة.</p>
+                    <a href="https://payhip.com/b/hy02Z" class="btn btn-small btn-accent ar" target="_blank">حمّل مجانًا</a>
+                </div>
+            </div>
+            
+            <!-- Curated Tools -->
+            <h2 class="section-title ar fade-in delay-4">تقنيات العافية المختارة</h2>
+            
+            <div class="services-grid">
+                <div class="service-card fade-in delay-1 ar">
+                    <div class="service-icon">
+                        <i class="fas fa-glass-whiskey"></i>
+                    </div>
+                    <h3 class="service-title ar">قارورة الماء المهيكلة i9 Living</h3>
+                    <p class="service-desc ar">تقنية متقدمة لتنظيم الماء مصممة لتعزيز التماسك الجزيئي، التوافر البيولوجي، والحيوية.</p>
+                    <a href="https://i9living.eu/?wpam_id=4" class="btn btn-small ar" target="_blank">استكشف التقنية</a>
+                </div>
+                
+                <div class="service-card fade-in delay-2 ar">
+                    <div class="service-icon">
+                        <i class="fas fa-water"></i>
+                    </div>
+                    <h3 class="service-title ar">نظام إحياء الماء Biodynamizer</h3>
+                    <p class="service-desc ar">تقنية مميزة لإحياء الماء. خصم حصري 5% برمز <span class="highlight">DEV5</span></p>
+                    <a href="https://biodynamizer.com/en/" class="btn btn-small ar" target="_blank">استكشف النظام</a>
+                </div>
+                
+                <div class="service-card fade-in delay-3 ar">
+                    <div class="service-icon">
+                        <i class="fas fa-university"></i>
+                    </div>
+                    <h3 class="service-title ar">أكاديمية القيادة الشهودية</h3>
+                    <p class="service-desc ar">أتقن <em>منهج رؤية العالم</em> للقيادة الشهودية. تدريب حصري للأفراد المميزين.</p>
+                    <a href="https://wa.me/971509806232?text=أنا مهتم/مهتمة بأكاديمية القيادة الشهودية" class="btn btn-small ar" target="_blank">
+                    استفسر عن التسجيل
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Final CTA -->
+            <section class="main-cta fade-in delay-5" style="margin-top: 4rem;">
+                <h2 class="ar">أسرع طريق للوضوح هو أيضًا الأكثر مباشرة</h2>
+                <p class="ar">في AZNEWTEC، نتخصص في حلول شهودية عالية الدقة تقطع عبر التعقيد لتقديم توجيه عملي. لحظة يقينك تنتظرك.</p>
+                <a href="https://wa.me/971509806232" class="whatsapp-btn ar" target="_blank">
+                    <i class="fab fa-whatsapp"></i> ابدأ الاستشارة
+                </a>
+            </section>
+            
+            <!-- Footer -->
+            <footer class="footer ar fade-in">
+                <div class="footer-links">
+                    <a href="https://wa.me/971509806232" target="_blank">استشارة مباشرة</a>
+                    <a href="https://wa.me/971509806232?text=أنا مهتم/مهتمة باستشارات العقارات الأوروبية" target="_blank">العقارات الأوروبية</a>
+                    <a href="https://wa.me/971509806232?text=معلومات عن تدريب منهج رؤية العالم" target="_blank">أكاديمية القيادة</a>
+                </div>
+                <p>© AZNEWTEC | إرشاد شهودية نخبوي</p>
+                <p style="margin-top: 1rem; font-size: 0.8rem; letter-spacing: 0.5px;">مصمم لمن يتطلب الدقة، الوضوح، والنتائج النهائية.</p>
+            </footer>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Language switching functionality
+            const langBtns = document.querySelectorAll('.lang-btn');
+            const langContents = document.querySelectorAll('.lang-content');
+            
+            langBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const lang = this.getAttribute('data-lang');
+                    
+                    // Update active button
+                    langBtns.forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    // Update active content
+                    langContents.forEach(content => {
+                        content.classList.remove('active');
+                        if (content.id === `${lang}-content`) {
+                            content.classList.add('active');
+                        }
+                    });
+                    
+                    // Save language preference
+                    localStorage.setItem('preferredLang', lang);
+                });
+            });
+            
+            // Check for saved language preference
+            const savedLang = localStorage.getItem('preferredLang');
+            if (savedLang) {
+                const savedBtn = document.querySelector(`.lang-btn[data-lang="${savedLang}"]`);
+                if (savedBtn) {
+                    savedBtn.click();
+                }
+            }
+            
+            // Animation on scroll
+            const fadeElements = document.querySelectorAll('.fade-in');
+            
+            const fadeInOnScroll = function() {
+                fadeElements.forEach(element => {
+                    const elementTop = element.getBoundingClientRect().top;
+                    const elementVisible = 100;
+                    
+                    if (elementTop < window.innerHeight - elementVisible) {
+                        element.style.opacity = "1";
+                        element.style.transform = "translateY(0)";
+                    }
+                });
+            };
+            
+            fadeElements.forEach(element => {
+                element.style.opacity = "0";
+                element.style.transform = "translateY(30px)";
+                element.style.transition = "opacity 1s ease, transform 1s ease";
+            });
+            
+            fadeInOnScroll();
+            
+            window.addEventListener('scroll', fadeInOnScroll);
+            
+            // Add hover effect to service cards
+            document.querySelectorAll('.service-card').forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    const icon = this.querySelector('.service-icon');
+                    if (icon) {
+                        icon.style.transform = 'scale(1.1) rotate(5deg)';
+                        icon.style.transition = 'transform 0.4s ease';
+                    }
+                });
+                
+                card.addEventListener('mouseleave', function() {
+                    const icon = this.querySelector('.service-icon');
+                    if (icon) {
+                        icon.style.transform = 'scale(1) rotate(0deg)';
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
